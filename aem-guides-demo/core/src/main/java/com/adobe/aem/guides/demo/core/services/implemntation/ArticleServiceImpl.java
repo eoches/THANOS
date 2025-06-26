@@ -1,5 +1,6 @@
 package com.adobe.aem.guides.demo.core.services.implemntation;
 
+import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -20,13 +21,13 @@ public class ArticleServiceImpl implements ArticleService {
     public static final Logger LOG = LoggerFactory.getLogger(ArticleServiceImpl.class);
 
     @Activate
-    public void activate() {
-        LOG.info("ArticleService activated");
+    public void activate(ComponentContext context) {
+        LOG.info("ArticleService activated {}", context.getProperties());
     }
 
     @Deactivate
-    public void deactivate() {
-        LOG.info("ArticleService deactivated");
+    public void deactivate(ComponentContext context) {
+        LOG.info("ArticleService deactivated {}", context.getProperties());
     }
 
     @Modified
