@@ -31,7 +31,7 @@ import com.day.cq.wcm.api.PageManager;
         "sling.servlet.selectors=resource",  
     }
 )
-public class ServletResource  extends SlingAllMethodsServlet{
+public class PractiseServletResource  extends SlingAllMethodsServlet{
 
 //     @Override
 //     protected void doGet(SlingHttpServletRequest request,

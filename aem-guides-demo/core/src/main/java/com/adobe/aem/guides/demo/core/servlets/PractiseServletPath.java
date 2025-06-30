@@ -28,7 +28,7 @@ import com.day.cq.wcm.api.PageManager;
         "sling.servlet.extensions=txt",
     }
    )
-public class ServletPath  extends SlingSafeMethodsServlet{
+public class PractiseServletPath  extends SlingSafeMethodsServlet{
 
     // @Override
     // protected void doGet(SlingHttpServletRequest request,

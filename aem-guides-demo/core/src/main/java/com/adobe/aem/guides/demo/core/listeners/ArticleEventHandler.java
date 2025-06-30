@@ -27,14 +27,10 @@ public class ArticleEventHandler implements EventHandler {
     public void handleEvent(Event event) {
        LOG.info("Info: Event Handler is executed.....");
        LOG.info("Topic Name: {}", event.getTopic());
-       String[] names = event.getPropertyNames();
-         if (names != null) {
-              for (String name : names) {
-                LOG.info("Property Name: {}, Value: {}", name, event.getProperty(name).toString());
-              }
-         } else {
-              LOG.info("No properties found in the event.");
-         }  
+       for (String name : event.getPropertyNames()) 
+       {
+            LOG.info("Property: {} = {}", name, event.getProperty(name));
+        }
     }
 
 }
