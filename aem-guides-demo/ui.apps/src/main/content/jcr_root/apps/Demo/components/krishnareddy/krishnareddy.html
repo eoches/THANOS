@@ -1,3 +1,40 @@
-<div data-sly-use.container="com.adobe.cq.wcm.core.components.models.Container"
-     data-sly-resource="${'container' @ resourceType='core/wcm/components/container/v1/container'}">
-</div>
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.PractiseKrishnaReddyModel">
+    <!-- Tab 1: Basic Info -->
+    <div class="basic-info">
+        <h2>Basic Info</h2>
+        <p><strong>Title:</strong> ${model.title}</p>
+        <p><strong>Number:</strong> ${model.number}</p>
+        <p><strong>Description:</strong> ${model.description}</p>
+        <p><strong>Publish Date:</strong> ${model.publishDate}</p>
+        <p><strong>Is Active:</strong> ${model.active ? 'Yes' : 'No'}</p>
+    </div>
+
+    <!-- Tab 2: Tags and Topics -->
+    <div class="tags-topics">
+        <h2>Tags and Topics</h2>
+        <p><strong>Section:</strong> ${model.section}</p>
+        <p><strong>Author:</strong> ${model.author}</p>
+        
+        <div>
+            <strong>Topics:</strong>
+            <ul>
+                <sly data-sly-list.topic="${model.topics}">
+                    <li>${topic}</li>
+                </sly>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tab 3: Links -->
+    <div class="links">
+        <h2>Links</h2>
+        <sly data-sly-list.link="${model.links}">
+            <div class="link-item">
+                <p><strong>Link Title:</strong> ${link.linkTitle}</p>
+                <p><strong>URL:</strong> <a href="${link.linkUrl}" target="_blank">${link.linkUrl}</a></p>
+                <p><strong>Link Date:</strong> ${link.linkDate}</p>
+                <hr />
+            </div>
+        </sly>
+    </div>
+</sly>
