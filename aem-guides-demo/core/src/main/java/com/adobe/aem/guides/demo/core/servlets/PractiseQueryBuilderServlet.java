@@ -25,10 +25,12 @@ import javax.json.Json;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 
-@Component(service = Servlet.class,
+@Component(
+           service = Servlet.class,
            property = {
-                   "sling.servlet.paths=/bin/qb",
-           })
+                   "sling.servlet.paths=/bin/querybuilder/practise",
+           }
+           )
 public class PractiseQueryBuilderServlet extends SlingAllMethodsServlet {
 
     @Reference
@@ -40,7 +42,6 @@ public class PractiseQueryBuilderServlet extends SlingAllMethodsServlet {
        
         ResourceResolver resourceResolver = request.getResourceResolver();
 
-        // Build predicate map
         Map<String, String> predicateMap = new HashMap<>();
         predicateMap.put("path", "/content/we-retail/us/en");
         predicateMap.put("type", "cq:Page");
