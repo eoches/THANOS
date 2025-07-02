@@ -23,7 +23,7 @@ import com.day.cq.wcm.api.PageManager;
     enabled = true,
     service = Servlet.class,
     property = {
-        "Sling.servlet.resourceTypes=Demo/components/title",
+        "sling.servlet.resourceTypes=Demo/components/title",
         "sling.servlet.methods=GET",
         "sling.servelt.methods=POST",
         "sling.servelt.extensions=json",
